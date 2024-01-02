@@ -1,0 +1,14 @@
+import math
+
+class Solution:
+    def minimizeSet(self, divisor1: int, divisor2: int, uniqueCnt1: int, uniqueCnt2: int) -> int:
+        lcm = math.lcm(divisor1, divisor2)
+        return math.ceil(max(
+            uniqueCnt1*divisor1/(divisor1-1),
+            uniqueCnt2*divisor2/(divisor2-1),
+            (uniqueCnt1+uniqueCnt2)*lcm/(lcm-1)
+        ))-1
+
+//This code uses the math.lcm function to calculate the least common multiple (LCM) of divisor1 and divisor2, and then it calculates the maximum possible value considering both unique counts and divisors.
+
+//The final result is obtained by using math.ceil to round up the maximum value and subtracting 1.
